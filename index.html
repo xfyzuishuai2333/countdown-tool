@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>时光倒计时 · 鼓励语录</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 背景装饰 -->
+  <div class="bg-decoration">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="container">
+    <!-- 顶部标题 -->
+    <header class="header">
+      <h1 class="art-title">时光倒计时</h1>
+      <p class="subtitle">记录每一个重要时刻 · 让时光不负期待</p>
+    </header>
+
+    <!-- 鼓励语滚动展示区 -->
+    <section class="quote-section">
+      <div class="quote-wrapper">
+        <div class="quote-viewport">
+          <div class="quote-track" id="quoteTrack"></div>
+        </div>
+        <div class="quote-control">
+          <button id="quoteShuffle" class="btn-shuffle" title="随机换一条">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <polyline points="21 16 21 21 16 21"></polyline>
+              <line x1="15" y1="15" x2="21" y2="21"></line>
+              <line x1="4" y1="4" x2="9" y2="9"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 添加倒计时按钮 -->
+    <section class="add-section">
+      <button id="addBtn" class="btn-add">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        添加新倒计时
+      </button>
+    </section>
+
+    <!-- 倒计时卡片列表 -->
+    <section class="countdown-list" id="countdownList"></section>
+  </div>
+
+  <!-- 添加/编辑倒计时弹窗 -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <h2 id="modalTitle">添加倒计时</h2>
+      <div class="form-group">
+        <label>名称</label>
+        <input type="text" id="inputTitle" placeholder="例如：期末考试、生日、毕业..." maxlength="30">
+      </div>
+      <div class="form-group">
+        <label>目标日期</label>
+        <input type="datetime-local" id="inputDate">
+      </div>
+      <div class="form-group">
+        <label>标记</label>
+        <div class="tag-options" id="tagOptions">
+          <span class="tag-option" data-tag="star" data-color="#ffd700">⭐ 重要</span>
+          <span class="tag-option" data-tag="heart" data-color="#ff6b9d">❤️ 期待</span>
+          <span class="tag-option" data-tag="rocket" data-color="#7c5cff">🚀 冲刺</span>
+          <span class="tag-option" data-tag="check" data-color="#4ade80">✅ 必达</span>
+          <span class="tag-option" data-tag="fire" data-color="#fb923c">🔥 奋斗</span>
+          <span class="tag-option" data-tag="none" data-color="#888">无标记</span>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button id="cancelBtn" class="btn-cancel">取消</button>
+        <button id="saveBtn" class="btn-save">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
